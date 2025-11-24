@@ -20,12 +20,17 @@ public class Client {
             ObjectInputStream in = new ObjectInputStream(adressSocket.getInputStream());
             Scanner scanner = new Scanner(System.in)) {
 
+            Object msg = in.readObject();
+            System.out.println(msg);
 
 
-        } catch (UnknownHostException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+
+        } catch (ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void main(String[] args) {
+        Client client = new Client();
     }
 }
