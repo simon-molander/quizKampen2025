@@ -10,7 +10,7 @@ import java.net.Socket;
 
 public class Server {
 
-    int port = 1337;
+    int port = 5432;
     private Score playerScore1 = new Score();
     private Score playerScore2 = new Score();
     public Server(){
@@ -23,6 +23,7 @@ public class Server {
              System.out.println("Player one connected");
 
              System.out.println("Waiting for player 2");
+             System.out.println("PLayer two connected");
              Socket player2 = serverSocket.accept();
 
 
@@ -40,7 +41,8 @@ public class Server {
              ObjectInputStream in = new ObjectInputStream(clientSocket1.getInputStream()))
         {
             out.writeObject("Spelet börjar!!! snälla fungera!!!!!!!!!");
-            out.flush();
+
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
