@@ -1,4 +1,4 @@
-package ClientServerRelation;
+package Database;
 
 public class Score {
 

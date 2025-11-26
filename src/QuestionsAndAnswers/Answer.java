@@ -1,8 +1,8 @@
-package ClientServerRelation;
+package QuestionsAndAnswers;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Answer {
+public class Answer implements Serializable {
 
     private String answerText;
     private boolean trueOrFalse;

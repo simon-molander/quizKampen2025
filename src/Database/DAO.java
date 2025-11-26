@@ -1,4 +1,8 @@
-package ClientServerRelation;
+package Database;
+
+import QuestionsAndAnswers.Answer;
+import QuestionsAndAnswers.Question;
+import Server.Server;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,7 +17,8 @@ public class DAO {
     public static ArrayList<Question> Geography = new ArrayList<>();
     public static ArrayList<Question> Media = new ArrayList<>();
 
-    int index = 0;
+
+    static public int index = 0;
 
     public DAO() {
 
@@ -288,6 +293,17 @@ public class DAO {
 
     public void printNextQuestion(ArrayList subject) {
         System.out.println(getQuestion(subject).getQuestionText());
+
+    }
+    public void setCategory (int category){
+        switch (category) {
+            case 1 -> Server.category = DAO.Media;
+            case 2 -> Server.category = DAO.History;
+            case 3 -> Server.category = DAO.Nature;
+            case 4 -> Server.category = DAO.Geography;
+        }
+
+
     }
 
 }
