@@ -1,8 +1,8 @@
-package ClientServerRelation;
+package QuestionsAndAnswers;
+import Database.DAO;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Question implements Serializable {
 

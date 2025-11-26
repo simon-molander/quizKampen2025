@@ -1,7 +1,6 @@
-package ClientServerRelation;
+package QuestionsAndAnswers;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Answer implements Serializable {
 

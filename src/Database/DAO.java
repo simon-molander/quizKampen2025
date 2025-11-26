@@ -1,8 +1,11 @@
-package ClientServerRelation;
+package Database;
+
+import QuestionsAndAnswers.Answer;
+import QuestionsAndAnswers.Question;
+import Server.Server;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class DAO {
 
@@ -15,7 +18,7 @@ public class DAO {
     public static ArrayList<Question> Media = new ArrayList<>();
 
 
-    static int index = 0;
+    static public int index = 0;
 
     public DAO() {
 

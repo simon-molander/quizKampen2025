@@ -1,5 +1,10 @@
-package ClientServerRelation;
+package Server;
 
+
+import Database.DAO;
+import Database.Message;
+import QuestionsAndAnswers.Answer;
+import QuestionsAndAnswers.Question;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -11,7 +16,7 @@ import java.util.ArrayList;
 public class Server {
 
     int port = 5432;
-    static ArrayList<Question> category = new ArrayList<>();
+    public static ArrayList<Question> category = new ArrayList<>();
     DAO dataB = new DAO();
 
     public Server(){
@@ -42,6 +47,8 @@ public class Server {
              ObjectInputStream in1 = new ObjectInputStream(player1.getInputStream());
              ObjectInputStream in2 = new ObjectInputStream(player2.getInputStream()))
         {
+
+            dataB.shuffleQuestions();
             boolean player1Chooses = true;
 
 
