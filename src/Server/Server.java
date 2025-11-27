@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Server {
 
     int port = 5432;
-    public static ArrayList<Question> category = new ArrayList<>();
+    public static ArrayList category = new ArrayList<>();
     DAO dataB = new DAO();
 
     public Server(){
@@ -64,9 +64,15 @@ public class Server {
                     currentplayerOut = out2;
                     currentplayerIn = in2;
                 }
+                dataB.shuffleCategories();
                 currentplayerOut.writeObject("Choose a category");
                 currentplayerOut.flush();
-                currentplayerOut.writeObject(new Message("1.Media 2.History 3.Nature 4.Geography"));
+                currentplayerOut.writeObject(new Message(
+                        "1." + dataB.getCategoryName(0) +
+                                " 2." + dataB.getCategoryName(1) +
+                                " 3." + dataB.getCategoryName(2) +
+                                " 4." + dataB.getCategoryName(3)));
+
                 currentplayerOut.flush();
 
                 int chosenCat = (int) currentplayerIn.readObject();

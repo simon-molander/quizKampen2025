@@ -8,6 +8,7 @@ public class Question implements Serializable {
 
 
     private ArrayList <ArrayList> subject = new ArrayList();
+    private String catText;
     private String questionText;
     private Answer answer1;
     private Answer answer2;
@@ -16,16 +17,20 @@ public class Question implements Serializable {
 
     private int playerAnswer;
 
-    public Question(ArrayList subject, String questionText, Answer answer1, Answer answer2, Answer answer3, Answer answer4) {
+    public Question(ArrayList subject, String catText, String questionText, Answer answer1, Answer answer2, Answer answer3, Answer answer4) {
         this.subject = subject;
+        this.catText=catText;
         this.questionText = questionText;
         this.answer1 = answer1;
         this.answer2 = answer2;
         this.answer3 = answer3;
         this.answer4 = answer4;
         subject.add(this);
-        DAO.subjectList.add(subject);
 
+    }
+
+    public String getCatText() {
+        return catText;
     }
 
     public Question() {
