@@ -79,6 +79,7 @@ public class Server {
                 dataB.setCategory(chosenCat);
 
 
+                //5:an ansvarar för antal frågor per spel
                 for (int i = 0; i < 5; i++) {
                     currentplayerOut.writeObject(dataB.getQuestion(category));
                     currentplayerOut.flush();
