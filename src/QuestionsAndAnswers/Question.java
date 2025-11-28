@@ -24,7 +24,7 @@ public class Question implements Serializable {
         this.answer3 = answer3;
         this.answer4 = answer4;
         subject.add(this);
-        DAO.subjectList.add(subject);
+
 
     }
 

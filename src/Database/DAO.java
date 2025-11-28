@@ -18,7 +18,7 @@ public class DAO {
     public static ArrayList<Question> Media = new ArrayList<>();
 
 
-    static public int index = 0;
+    public static int index = 0;
 
     public DAO() {
 
@@ -28,6 +28,7 @@ public class DAO {
                 new Answer("1943", false),
                 new Answer("1903", false),
                 new Answer("1891", false));
+
 
         Question q2h = new Question(History, "Who is not on a currency on the US dollar?",
                 new Answer("George Washington", false),
@@ -264,10 +265,12 @@ public class DAO {
                 new Answer("Israel", false),
                 new Answer("Jordan", true));
 
+        subjectList.clear();
+        subjectList.add(History);
+        subjectList.add(Nature);
+        subjectList.add(Geography);
+        subjectList.add(Media);
 
-        //for (Question q : History){
-        //    System.out.println(q.getQuestionText());
-        //}
     }
 
     public Question getQuestion(ArrayList subject) {
